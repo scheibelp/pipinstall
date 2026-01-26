@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pipspack"
+version = "0.1.0"
+
+[project.scripts]
+spack = "pipspack.runner:main"
