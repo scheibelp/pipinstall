@@ -1,0 +1,3 @@
+# Requirements for building the dist
+# (these are not requirements for spack itself)
+build
