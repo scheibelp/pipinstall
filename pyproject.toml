@@ -8,3 +8,10 @@ version = "0.1.0"
 
 [project.scripts]
 spack = "pipspack.runner:main"
+
+[tool.setuptools]
+packages = ["pipspack", "spack"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+pipspack = ["spack/**"]
