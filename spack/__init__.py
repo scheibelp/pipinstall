@@ -1,11 +1,15 @@
-# spack/__init__.py  (bootstrap stub that delegates to vendored Spack)
+"""
+This init is distributed within a "spack" directory in site-packages, along
+with the completely untouched Spack source code. It exists so that users can
+e.g. `import spack.concretize as sc; sc.concretize_one("zlib")`.
+"""
 from __future__ import annotations
 
-import pkgutil
 from importlib.resources import files, as_file
 
-# Ensure this is treated as a package
-__path__ = pkgutil.extend_path(__path__, __name__)  # type: ignore[name-defined]
+# I don't want to treat this as a namespace split across multiple
+# "spack" directories.
+# __path__ = pkgutil.extend_path(__path__, __name__)  # type: ignore[name-defined]
 
 def _bootstrap_real_spack_init() -> None:
     # This is the *actual* spack package directory containing paths.py, spec.py, etc.
